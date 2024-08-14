@@ -57,7 +57,7 @@ class FarmWebController extends Controller
         $farm = Farm::findOrFail($id);
         // light sensor reads
         $lightSensor = $farm->lightSensors()->latest()->first();
-        $lightReads = $lightSensor->readings()->select("read")->get();
+        $lightReads = $lightSensor === null ? [] :  $lightSensor->readings()->select("read")->get();
         $lightData = [];
         foreach ($lightReads as $read) {
             array_push($lightData, +$read->read);
@@ -70,7 +70,7 @@ class FarmWebController extends Controller
 
         // temperature sensor reads
         $temperatureSensor = $farm->temepratureSensors()->latest()->first();
-        $temperatureReads = $temperatureSensor->readings()->select("read")->get();
+        $temperatureReads = $temperatureSensor === null ? [] :  $temperatureSensor->readings()->select("read")->get();
         $temperatureData = [];
         foreach ($temperatureReads as $read) {
             array_push($temperatureData, +$read->read);
@@ -82,7 +82,7 @@ class FarmWebController extends Controller
         ];
         // humidity sensor reads
         $humiditySensor = $farm->humiditySensors()->latest()->first();
-        $humidityReads = $humiditySensor->readings()->select("read")->get();
+        $humidityReads = $humiditySensor === null ? [] :  $humiditySensor->readings()->select("read")->get();
         $humidityData = [];
         foreach ($humidityReads as $read) {
             array_push($humidityData, +$read->read);
@@ -94,7 +94,7 @@ class FarmWebController extends Controller
         ];
         // tds sensor reads
         $tdsSensor = $farm->tdsSensors()->latest()->first();
-        $tdsReads = $tdsSensor->readings()->select("read")->get();
+        $tdsReads = $tdsSensor === null ? [] :  $tdsSensor->readings()->select("read")->get();
         $tdsData = [];
         foreach ($tdsReads as $read) {
             array_push($tdsData, +$read->read);
@@ -106,7 +106,7 @@ class FarmWebController extends Controller
         ];
         // soli moisture sensor reads
         $soilMoistureSensor = $farm->moistureSensors()->latest()->first();
-        $soilMoistureReads = $soilMoistureSensor->readings()->select("read")->get();
+        $soilMoistureReads = $soilMoistureSensor === null ? [] :  $soilMoistureSensor->readings()->select("read")->get();
         $soilMoistureData = [];
         foreach ($soilMoistureReads as $read) {
             array_push($soilMoistureData, +$read->read);
