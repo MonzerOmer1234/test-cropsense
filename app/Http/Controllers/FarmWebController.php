@@ -10,9 +10,11 @@ class FarmWebController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index( Request $request)
     {
         //
+
+
         $farms = Farm::all();
         return view('farms.index', ['farms' => $farms]);
     }
@@ -31,6 +33,19 @@ class FarmWebController extends Controller
     public function store(Request $request)
     {
         //
+
+        $request->validate([
+            'polygon' => 'required',
+        ]);
+        $farm = Farm::create([
+            'farm_group_id' => 1 ,
+            'polygon' => json_decode($request->polygon)->geometry->coordinates,
+        ]);
+
+
+
+        return redirect()->route('farms.index');
+
     }
 
     /**

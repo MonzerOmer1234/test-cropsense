@@ -19,11 +19,13 @@ return new class extends Migration
 
             $table->foreignId('farm_group_id')->nullable()->constrained('farm_groups')->onDelete('cascade');
 
-            $table->string('name');
-            $table->string('location'); // text address
-            $table->double('size'); // Area in hectares or acres
+            $table->string('name')->nullable();
+            $table->string('location')->nullable(); // text address
+            $table->double('size')->nullable(); // Area in hectares or acres
             $table->string('crop_type')->nullable(); // Optional: Crops type
             $table->text('description')->nullable(); // Optional: Detailed farm description
+            $table->json('polygon')->nullable();
+
 
             // will add geolocation data later
 

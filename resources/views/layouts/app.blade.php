@@ -16,7 +16,18 @@
     <link rel="stylesheet" href="{{ asset('assets/css/fullcalendar.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    
+    <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+        {{-- for chart.js --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -34,21 +45,21 @@
                 <li class="nav-item ms-4 my-4">
 
 
-                    <span class="text"><a href="{{route('workers.index')}}">Workers</a></span>
+                    <span class="text"><a href="{{ route('workers.index') }}">Workers</a></span>
 
 
                 </li>
                 <li class="nav-item mx-5 ms-4 my-4">
 
 
-                    <span class="text"><a href="{{route('farms.index')}}">Farms</a></span>
+                    <span class="text"><a href="{{ route('farms.index') }}">Farms</a></span>
 
 
                 </li>
                 <li class="nav-item mx-5 ms-4 my-4">
 
 
-                    <span class="text"><a href="{{route('tasks.index')}}">Tasks</a></span>
+                    <span class="text"><a href="{{ route('tasks.index') }}">Tasks</a></span>
 
 
                 </li>

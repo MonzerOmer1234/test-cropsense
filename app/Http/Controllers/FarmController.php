@@ -36,7 +36,8 @@ class FarmController extends Controller
        'size' => 'required',
        'crop_type' => 'required',
        'description' => 'required',
-        'farm_group_id' => 'required'
+        'farm_group_id' => 'required',
+        
         ]);
 
         $farm = Farm::create($fields);

@@ -76,7 +76,7 @@ Route::post('/sensor-readings/read-sensor-data' , [SensorReadController::class ,
 // Farm routes
 //  1. to store a farm
 
-Route::apiResource('/farms', FarmController::class);
+// Route::apiResource('/farms', FarmController::class);
 
 
 

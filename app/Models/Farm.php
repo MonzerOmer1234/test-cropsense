@@ -14,7 +14,29 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Farm extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+
+    // $table->foreignId('farm_group_id')->nullable()->constrained('farm_groups')->onDelete('cascade');
+
+    // $table->string('name')->nullable();
+    // $table->string('location')->nullable(); // text address
+    // $table->double('size')->nullable(); // Area in hectares or acres
+    // $table->string('crop_type')->nullable(); // Optional: Crops type
+    // $table->text('description')->nullable(); // Optional: Detailed farm description
+    // $table->json('polygon')->nullable();
+    protected $fillable = [
+        'farm_group_id',
+        'name' ,
+        'location',
+        'size' ,
+        'crop_type',
+        'description' ,
+        'polygon'
+    ];
+
+
+    protected $casts = [
+        'polygon' => 'array'
+        ];
 
     /**
      * Define a one-to-many relationship with Sensor.

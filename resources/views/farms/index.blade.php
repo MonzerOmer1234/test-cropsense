@@ -4,7 +4,7 @@
 @section('content')
 
 <div class="d-flex justify-content-end align-items-center">
-    <a href="{{route('workers.create')}}" class="btn btn-primary me-5">Add A worker</a>
+    <a href="{{route('workers.create')}}" class="btn btn-primary me-5">Add A Farm</a>
 </div>
  <div class="  overflow-scroll d-flex justify-content-center align-items-center  mx-5 table-content position-relative" style="margin-top: 100px ; z-index : 100">
 
