@@ -8,8 +8,13 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\FarmAdmin\WorkerController;
 use App\Http\Controllers\FarmController;
 use App\Http\Controllers\FarmGroupController;
+use App\Http\Controllers\HumidityController;
+use App\Http\Controllers\LightController;
 use App\Http\Controllers\SensorController;
 use App\Http\Controllers\SesnsorController;
+use App\Http\Controllers\TdsController;
+use App\Http\Controllers\TemperatureController;
+use App\Models\Sensors\SoilMoisture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -76,7 +81,12 @@ Route::post('/sensor-readings/read-sensor-data' , [SensorReadController::class ,
 // Farm routes
 //  1. to store a farm
 
-// Route::apiResource('/farms', FarmController::class);
+Route::apiResource('/farms', FarmController::class);
+Route::apiResource('/lights', LightController::class);
+Route::apiResource('/temperatures', TemperatureController::class);
+Route::apiResource('/humidities', HumidityController::class);
+Route::apiResource('/soilMoistures', SoilMoisture::class);
+Route::apiResource('/tds', TdsController::class);
 
 
 

@@ -28,6 +28,8 @@ class Farm extends Model
         'name' ,
         'location',
         'size' ,
+         'lat' ,
+         'long',
         'crop_type',
         'description' ,
         'polygon'

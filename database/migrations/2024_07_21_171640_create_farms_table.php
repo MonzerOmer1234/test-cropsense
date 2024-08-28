@@ -24,6 +24,8 @@ return new class extends Migration
             $table->double('size')->nullable(); // Area in hectares or acres
             $table->string('crop_type')->nullable(); // Optional: Crops type
             $table->text('description')->nullable(); // Optional: Detailed farm description
+            $table->double('lat')->nullable();
+            $table->double('long')->nullable();
             $table->json('polygon')->nullable();
 
 

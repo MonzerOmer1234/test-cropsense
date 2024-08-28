@@ -7,6 +7,7 @@ use App\Models\Light;
 use App\Models\SensorRead;
 use App\Models\Sensors\Light as SensorsLight;
 use App\Models\Sensors\SensorRead as SensorsSensorRead;
+use Database\Seeders\SensorReadSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -88,7 +89,7 @@ class LightController extends Controller
      * @param SensorRead $sensorRead
      * @return Response
      */
-    public function update(Request $request, Light $light , SensorRead $sensorRead)
+    public function update(Request $request, SensorsLight $light , SensorReadSeeder $sensorRead)
     {
         //
 
@@ -125,7 +126,7 @@ class LightController extends Controller
      * @param Light $light .
      * @return Response .
      */
-    public function destroy(Light $light)
+    public function destroy(SensorsLight $light)
     {
         //
 
